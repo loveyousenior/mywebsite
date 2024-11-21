@@ -1,0 +1,256 @@
+:root {
+    --primary: #000000;
+    --secondary: #ffffff;
+    --gray: #2a2b2c;
+    --light-gray:#777777;
+    --theme:#37afd4;
+}
+
+html{
+    scroll-behavior: smooth;
+
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+
+
+}
+
+
+h1, h2{
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 800;
+}
+
+/* Enhanced Navbar Styles */
+
+.navbar {
+    background: transparent;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+    padding: .8rem;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin: 0 15px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--theme);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+
+#home {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/photos/Home\ cover.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#portfolio {
+    padding: 2rem 0;
+    margin-top: 5rem;
+    background: #f8f9fa;
+}
+
+.portfolio-grid {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+.portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+
+
+#about {
+    padding: 5rem 0;
+    margin-top: 5rem;
+
+}
+
+#typing{
+    height: 150vh;
+    background:linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0)), url('/photos/silhouette-right.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--theme);
+
+}
+
+#typing h1{
+    mix-blend-mode: difference;
+    font-size: 3.5rem;
+}
+
+#contact-info{
+    background-color: var(--primary);
+    color: var(--primary);
+    height: 20vh;
+}
+
+
+#contact {
+    padding: 5rem 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    /* background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)), url('./photos/wed\ \(26\)sc.jpg');
+    background-size: cover;
+    background-position: center; */
+    color:var(--primary);
+    background-color: var(--secondary);
+    
+}
+
+input{
+    
+    color: rgba(255, 255, 255, 0);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .009375em;
+    text-decoration: inherit;
+    text-transform: inherit;
+    align-self: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 16px 6px;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 4px 4px 0 0;
+    background: rgb(255, 0, 0);
+    height: 56px;
+ 
+
+}
+
+input:hover{
+    border-bottom-color: rgb(0, 0, 0);
+    
+}
+
+input:focus{
+    border-color: #ff0000 !important;
+}
+
+footer {
+    background: #000;
+    color: #919191;
+    padding: 2rem 0;
+}
+
+footer span{
+    color: var(--secondary);
+}
+
+.social-icons {
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--theme);
+}
+
+@media (max-width: 992px) {
+    .portfolio-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .portfolio-grid {
+        column-count: 1;
+    }
+    
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    #typing{
+        background-position-x: 44%;
+    }
+
+}
